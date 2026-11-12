@@ -36,7 +36,7 @@ public class GeoTools {
         return GEOMETRY_FACTORY.createPolygon(shell, holes);
     }
 
-    private static LinearRing createLinearRing(List<LngLatAlt> points) {
+    private static org.locationtech.jts.geom.LinearRing createLinearRing(List<LngLatAlt> points) {
         Coordinate[] coordinates = points.stream()
                 .map(p -> new Coordinate(p.getLongitude(), p.getLatitude()))
                 .toArray(Coordinate[]::new);
